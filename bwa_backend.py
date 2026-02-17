@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import operator
 import os
 import re
@@ -11,22 +10,17 @@ from pydantic import BaseModel, Field
 
 from langgraph.graph import StateGraph, START, END
 from langgraph.types import Send
-
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
 from dotenv import load_dotenv
 
 load_dotenv()
 
-
-
 # ============================================================
 # Blog Writer (Router → (Research?) → Orchestrator → Workers → ReducerWithImages)
 # Patches image capability using your 3-node reducer flow:
 #   merge_content -> decide_images -> generate_and_place_images
 # ============================================================
-
-
 
 # 1) Schemas
 
@@ -577,3 +571,4 @@ if __name__ == "__main__":
     })
 
     print("\nBlog generated successfully!\n")
+
