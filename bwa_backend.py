@@ -5,9 +5,7 @@ import re
 from datetime import date, timedelta
 from pathlib import Path
 from typing import TypedDict, List, Optional, Literal, Annotated
-
 from pydantic import BaseModel, Field
-
 from langgraph.graph import StateGraph, START, END
 from langgraph.types import Send
 from langchain_groq import ChatGroq
@@ -560,9 +558,6 @@ g.add_edge("reducer", END)
 app = g.compile()
 app
 
-
-
-
 if __name__ == "__main__":
     result = app.invoke({
         "topic": "Write a blog about Multi-Agent Systems",
@@ -571,4 +566,5 @@ if __name__ == "__main__":
     })
 
     print("\nBlog generated successfully!\n")
+
 
