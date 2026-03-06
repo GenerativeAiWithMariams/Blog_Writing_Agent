@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import json
 import os
 import re
@@ -8,7 +7,6 @@ from datetime import date
 from io import BytesIO
 from pathlib import Path
 from typing import Any, Dict, Optional, List, Iterator, Tuple
-
 import pandas as pd
 import streamlit as st
 
@@ -463,4 +461,5 @@ if out:
 
         st.text_area("Event log", value="\n\n".join(st.session_state["logs"][-80:]), height=520)
 else:
+
     st.info("Enter a topic and click **Generate Blog**.")
