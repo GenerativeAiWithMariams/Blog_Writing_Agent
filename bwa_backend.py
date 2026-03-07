@@ -13,7 +13,6 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from dotenv import load_dotenv
 
 load_dotenv()
-
 # ============================================================
 # Blog Writer (Router → (Research?) → Orchestrator → Workers → ReducerWithImages)
 # Patches image capability using your 3-node reducer flow:
@@ -564,7 +563,7 @@ if __name__ == "__main__":
         "as_of": str(date.today()),
         "sections": [],
     })
-
     print("\nBlog generated successfully!\n")
+
 
 
