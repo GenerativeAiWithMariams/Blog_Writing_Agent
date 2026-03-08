@@ -9,13 +9,10 @@ from pathlib import Path
 from typing import Any, Dict, Optional, List, Iterator, Tuple
 import pandas as pd
 import streamlit as st
-
 # -----------------------------
 # Import your compiled LangGraph app
 # -----------------------------
 from bwa_backend import app
-
-
 # -----------------------------
 # Helpers
 # -----------------------------
@@ -24,8 +21,6 @@ def safe_slug(title: str) -> str:
     s = re.sub(r"[^a-z0-9 _-]+", "", s)
     s = re.sub(r"\s+", "_", s).strip("_")
     return s or "blog"
-
-
 def bundle_zip(md_text: str, md_filename: str, images_dir: Path) -> bytes:
     buf = BytesIO()
     with zipfile.ZipFile(buf, "w", compression=zipfile.ZIP_DEFLATED) as z:
@@ -450,7 +445,6 @@ if out:
                         file_name="images.zip",
                         mime="application/zip",
                     )
-
     # --- Logs tab ---
     with tab_logs:
         st.subheader("Logs")
@@ -463,3 +457,4 @@ if out:
 else:
 
     st.info("Enter a topic and click **Generate Blog**.")
+
